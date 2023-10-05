@@ -1,0 +1,10 @@
+.env
+.idea
+logs/*
+vendor/*
+.Ds_Store
+node_modules/*
+public/build/*
+public/files/*/*
+/var/*
+/public/sitemaps/*
