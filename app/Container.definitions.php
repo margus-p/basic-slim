@@ -10,7 +10,7 @@ return [
 
     EntityManager::class => DI\factory(function () {
         // TODO: Add configuration for production use
-        $entitiesPaths = [$_SERVER["DOCTRINE_METADATA_DIR"]];
+        $entitiesPaths = [APP_ROOT . $_SERVER["DOCTRINE_METADATA_DIR"]];
         $dbParams = [
             'driver'   => $_SERVER["DOCTRINE_DRIVER"],
             'host'     => $_SERVER["DB_HOST"],
