@@ -45,9 +45,10 @@ class SiteVisit
         return $this->id;
     }
 
-    public function setId(?int $id): void
+    public function setId(?int $id): static
     {
         $this->id = $id;
+        return $this;
     }
 
     public function getIpAddress(): string
@@ -55,9 +56,10 @@ class SiteVisit
         return $this->ipAddress;
     }
 
-    public function setIpAddress(string $ipAddress): void
+    public function setIpAddress(string $ipAddress): static
     {
         $this->ipAddress = $ipAddress;
+        return $this;
     }
 
     public function getUserAgent(): string
@@ -65,13 +67,15 @@ class SiteVisit
         return $this->userAgent;
     }
 
-    public function setUserAgent(string $userAgent): void
+    public function setUserAgent(string $userAgent): static
     {
         if (strlen($userAgent) > 512) {
             $userAgent = substr($userAgent, 0, 512);
         }
 
         $this->userAgent = $userAgent;
+
+        return $this;
 
     }
 
@@ -80,13 +84,15 @@ class SiteVisit
         return $this->url;
     }
 
-    public function setUrl(string $url): void
+    public function setUrl(string $url): static
     {
         if (strlen($url) > 512) {
             $url = substr($url, 0, 512);
         }
 
         $this->url = $url;
+
+        return $this;
 
     }
 
@@ -95,13 +101,15 @@ class SiteVisit
         return $this->referrer;
     }
 
-    public function setReferrer(?string $referrer): void
+    public function setReferrer(?string $referrer): static
     {
         if (strlen($referrer) > 512) {
             $referrer = substr($referrer, 0, 512);
         }
 
         $this->referrer = $referrer;
+
+        return $this;
 
     }
 
@@ -110,9 +118,10 @@ class SiteVisit
         return $this->createdAt;
     }
 
-    public function setCreatedAt(DateTimeImmutable $createdAt): void
+    public function setCreatedAt(DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
+        return $this;
     }
 
 }
