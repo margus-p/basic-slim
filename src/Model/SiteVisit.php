@@ -14,7 +14,6 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Index(columns: ['createdAt'], name: 'idx_site_visits_created_at')]
 class SiteVisit
 {
-
     #[ORM\Id]
     #[ORM\Column(type: 'integer')]
     #[ORM\GeneratedValue]
@@ -103,7 +102,7 @@ class SiteVisit
 
     public function setReferrer(?string $referrer): static
     {
-        if (strlen($referrer) > 512) {
+        if ($referrer != null && strlen($referrer) > 512) {
             $referrer = substr($referrer, 0, 512);
         }
 
