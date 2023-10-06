@@ -28,4 +28,7 @@ return [
 
     }),
 
+    /* Repositories */
+    \App\Repositories\Contracts\Site\SiteVisitRepositoryInterface::class => \DI\get(\App\Repositories\Implementation\Doctrine\Site\SiteVisitRepository::class),
+
 ];
