@@ -12,3 +12,8 @@ $dotenv->required([
     "APP_DEV_MODE",
 
 ])->isBoolean();
+
+$dotenv->required([
+    "DB_HOST", "DB_PORT", "DB_USER", "DB_PASS", "DB_NAME", "DB_CHARSET",
+    "DOCTRINE_DRIVER", "DOCTRINE_METADATA_DIR",
+]);
