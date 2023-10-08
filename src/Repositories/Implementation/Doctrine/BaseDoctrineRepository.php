@@ -20,11 +20,11 @@ class BaseDoctrineRepository implements RepositoryInterface
     private bool $isTransactionActive = false;
     protected static ?LoggerInterface $logger;
 
-    public function __construct(EntityManager $em, ObjectRepository $or)
+    public function __construct(EntityManager $em, ObjectRepository $or, ?LoggerInterface $logger = null)
     {
         $this->entityManager = $em;
         $this->genericRepository = $or;
-
+        self::$logger = $logger;
     }
 
     public function findAll(): array
