@@ -18,7 +18,7 @@ class BaseDoctrineRepository implements RepositoryInterface
     protected EntityManager $entityManager;
     protected ObjectRepository $genericRepository;
     private bool $isTransactionActive = false;
-    protected static ?LoggerInterface $logger;
+    protected static ?LoggerInterface $logger = null;
 
     public function __construct(EntityManager $em, ObjectRepository $or)
     {
