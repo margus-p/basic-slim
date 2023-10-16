@@ -36,6 +36,17 @@ In your project directory, run:
   php vendor/bin/doctrine migrations:migrate
 ```
 
+4. By default, the app works in the root directory. To get the app running in a subdirectory, you must edit the .htaccess file in the public directory and add the RewriteBase line. Then, change the value to the subdirectory name. For example, if you want the app to run in the /app directory, the line should look like this:
+
+```bash
+  RewriteBase /app
+```
+
+Additionally, you must let the Slim router know that the app is running in a subdirectory. To do this, edit the public/index.php file and add the following line after the $app variable is instantiated:
+
+```bash
+  $app->setBasePath('/app');
+```
 
 ## Run Locally
 
