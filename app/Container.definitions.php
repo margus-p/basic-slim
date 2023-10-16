@@ -8,6 +8,17 @@ use Doctrine\ORM\ORMSetup;
 
 return [
 
+    "view" => DI\factory(function (\Psr\Container\ContainerInterface $c) {
+        return \Slim\Views\Twig::create(
+            APP_ROOT . $_SERVER["TWIG_TEMPLATES_PATH"],
+            [
+                'cache' => APP_ROOT . $_SERVER["TWIG_CACHE_PATH"],
+                'debug' => $_SERVER["APP_DEV_MODE"],
+            ]
+        );
+
+    }),
+
     EntityManager::class => DI\factory(function () {
         // TODO: Add configuration for production use
         $entitiesPaths = [APP_ROOT . $_SERVER["DOCTRINE_METADATA_DIR"]];
